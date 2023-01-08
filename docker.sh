@@ -100,7 +100,9 @@ sudo systemctl enable docker
 elif [[ "$ddd" = "4" ]]; then
 yellow  "npm是nginx反向代理设置的一个友好web操作界面，需要通过docker-compose安装。"
 read "输入npm安装位置：           " npmFile
+npmFile=$npmFile
 read "输入npm的web端口：           " npmPort
+npmPort=$npmPort
 mkdir /docker
 cd /
 cd /docker
@@ -141,7 +143,9 @@ fi
 elif [[ "$ddd" = "5" ]]; then
 yellow  "portainer是docker的一个非常友好web操作界面"
 read "输入portainer安装位置：           " pFile
+pFile=$pFile
 read "输入portainer的web端口：           " pPort
+pFile=$pFile
 mkdir /docker
 cd /
 cd /docker
