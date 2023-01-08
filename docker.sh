@@ -39,29 +39,42 @@ if [[ "$ddd" = "1" ]]; then
         read character
         case $character in
             1 ) 
-                curl -fsSL https://get.docker.com | bash -s docker
+                source docker1.sh
             ;;
             2 ) 
-
+                curl -fsSL https://get.docker.com | bash -s docker
             ;;
-            3 ) echo 3
+            3 ) 
+                source docker2.sh
             ;;
             * ) echo 输入不符合要求
             esac          
         fi
 # docker-dompose
-sudo apt install docker-compose || curl -L https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-`uname -m` > ./docker-compose
- if [ $? = '0' ]; then
-  echo '安装成功【docker】【docker-compose】'
- else
-    bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/DockerInstallation.sh)
- fi
+elif [[ "$ddd" = "2" ]]; then
+    sudo apt install docker-compose  
     if [ $? = '0' ]; then
-        green "安装完成✅✅✅！"
-    elif [ $? != '0' ]; then
-        red "安装失败，人工检查！"
-        exit 1
-    fi
+         green "【docker-compose】...安装完成✅✅✅！"
+    else
+        red "安装失败，可输入数字尝试一键安装！"
+        echo -n "输入要使用的安装命令：      > "
+        read character
+        case $character in
+            1 ) 
+                bash <(curl -sSL https://gitee.com/SuperManito/LinuxMirrors/raw/main/DockerInstallation.sh)
+            ;;
+            2 ) 
+                curl -L https://github.com/docker/compose/releases/download/v2.14.0/docker-compose-linux-`uname -m` > ./docker-compose
+            ;;
+            3 ) 
+                source docker1.sh
+            ;;
+            * ) echo 输入不符合要求
+            esac          
+        fi
+
+# docker优化
+elif [[ "$ddd" = "3" ]]; then
 cat > /etc/docker/daemon.json <<EOF
 {
     "log-driver": "json-file",
@@ -75,7 +88,8 @@ cat > /etc/docker/daemon.json <<EOF
     "ip6tables":true
 }
 EOF
-sudo systemctl restart docker && sudo systemctl enable docker
+sudo systemctl restart docker
+sudo systemctl enable docker
      if [ $? = '0' ]; then
         green "优化完成✅✅✅！"
     elif [ $? != '0' ]; then
@@ -83,15 +97,21 @@ sudo systemctl restart docker && sudo systemctl enable docker
         exit 1
     fi
 # npm
-myFILE="npm"  
-myPORT="81"
-if [ -d "/docker/${myFILE}" ]; then
-    rm -rf /docker/${myFILE} && mkdir /docker/${myFILE}
-else
-    mkdir /docker/${myFILE}
-fi
+elif [[ "$ddd" = "4" ]]; then
+yellow  "npm是nginx反向代理设置的一个友好web操作界面，需要通过docker-compose安装。"
+read "输入npm安装位置：           " npmFile
+read "输入npm的web端口：           " npmPort
+mkdir /docker
 cd /
-cd /docker/${myFILE} && cat > docker-compose.yml <<EOF
+cd /docker
+if [ -d "/docker/${npmFile}" ]; then
+    rm -rf /docker/${npmFile}
+    mkdir /docker/${npmFile}
+else
+    mkdir /docker/${npmFile}
+fi
+cd /docker/${npmFile}
+cat > docker-compose.yml <<EOF
 version: '3'
 services:
   app:
@@ -105,35 +125,54 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
 EOF
-lsof -i:${myPORT} && docker-compose up -d
+lsof -i:81 && lsof -i:80 && lsof -i:443
+if [ $? = '0' ]; then
+    docker-compose up -d
     if [ $? = '0' ]; then
-    green "${myFILE} 安装成功✅✅✅！  端口:${myPORT}"
-    yello "其他注意事项⚠️⚠️⚠️： admin@example.com：changeme"
-    green "IP参考"
-    curl ifconfig.me
-    ip addr show docker0
-    read -p "继续安装面板（y）："  pro
-        if [[ "$pro" = "y" ]]; then
-            pro
-        fi
-    elif [ $? != '0' ]; then
-        red "安装失败，人工检查！"
-        exit 1
-    fi
-# portainer
-myFILE="portainer"  
-myPORT="82"
-if [ -d "/docker/${myFILE}" ]; then
-    rm -rf /docker/${myFILE} && mkdir /docker/${myFILE}
-else
-    mkdir /docker/${myFILE}
+        green "${npmFile} 安装成功✅✅✅！  端口:${npmPort}"
+        yello "其他注意事项⚠️⚠️⚠️： admin@example.com：changeme"
+    else
+        red "自动安装失败，请移动到对应文件夹，手动运行：     "
+        green "docker-compose up -d "
+        blue "进行安装，安装成功后帐号信息：admin@example.com：changeme"
+   fi
 fi
+# portainer
+elif [[ "$ddd" = "5" ]]; then
+yellow  "portainer是docker的一个非常友好web操作界面"
+read "输入portainer安装位置：           " pFile
+read "输入portainer的web端口：           " pPort
+mkdir /docker
 cd /
-cd /docker/${myFILE} && docker run -d --restart=always --name="portainer" -p 82:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce
-alias dopro1='sh -c "$(curl -kfsSl https://gitee.com/expin/public/raw/master/onex86.sh)"'
-
-
-cat > docker-compose.yml <<EOF
+cd /docker
+if [ -d "/docker/${pFile}" ]; then
+    rm -rf /docker/${pFile}
+    mkdir /docker/${pFile}
+else
+    mkdir /docker/${pFile}
+fi
+cd /docker/${pFile}
+lsof -i:81
+if [ $? = '0' ]; then
+    docker run -d --restart=always --name="portainer" -p 82:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce
+    if [ $? = '0' ]; then
+        green "portainer 安装成功✅✅✅！  端口:${pPort}"
+    else
+        red "安装失败，可输入数字尝试一键安装！"
+        echo -n "输入要使用的安装命令：      > "
+        read chara
+        case $chara in
+            1 ) 
+                sh -c "$(curl -kfsSl https://gitee.com/expin/public/raw/master/onex86.sh)"
+                ;;
+            2 ) 
+                docker run -d --restart=always --name portainer -p 82:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer/data:/data -v /docker/portainer/public:/public portainer/portainer:latest
+            ;;
+            3 ) 
+                docker run -d -p 82:8000 -p 82:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer/data:/data portainer/portainer-ce:latest
+            ;;
+            4 )
+                            cat > docker-compose.yml <<EOF
 version: "3"
 services:
   portainer:
@@ -147,32 +186,12 @@ services:
 volumes:
     data: 
 EOF
-lsof -i:${myPORT} 
-if [ $? = '0' ]; then
-    echo "指定端口已占用，详情：       "
-lsof -i:${myPORT} 
-    read -p "输入要关闭的进程PID：" inPID
-    kill -9 ${inPID}
-else
-
-fi
-sudo docker-compose up -d
-# wget https://labx.me/dl/4nat/public.zip && unzip public.zip
-# lsof -i:82  && docker run -d --restart=always --name portainer -p 82:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer/data:/data -v /docker/portainer/public:/public portainer/portainer:latest
-# if [ $? != '0' ];then
-#    docker run -d -p 882:8000 -p 82:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer/data:/data portainer/portainer-ce:latest
-# fi
-    if [ $? = '0' ]; then
-        green "${myFILE} 安装成功✅✅✅  端口:${myPORT}"
-        yello "其他注意事项⚠️⚠️⚠️： 使用https登录，异常处理：sudo docker restart portainer"
-        green "IP参考"
-        curl ifconfig.me
-        ip addr show docker0
-    elif [ $? != '0' ]; then
-        red "安装失败，人工检查！"
-        exit 1
+                red "自动安装失败，请移动到对应文件夹，手动运行：     "
+                green "docker-compose up -d "
+                blue "进行安装，安装成功后帐号信息：admin@example.com：changeme"
+            ;;
+            * ) echo 输入不符合要求
+            esac          
+        fi
     fi
 fi
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
