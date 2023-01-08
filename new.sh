@@ -80,8 +80,16 @@ if [[ ${reME} = "y" ]]; then
     fi
     read -p "增加root用户（y），确认添加：       " addUS
     if [[ "$addUS" = "y" ]] ; then
-      source addUSER.sh
-      green "增加root用户。。。完成✅✅✅！"
+        echo "输入要添加的用户名"
+        read -p ":    " name 
+        echo "输入该用户的密码"
+        read -p ":    " pass 
+        useradd -p `openssl passwd -1 -salt 'salt' $pass` $name -o -u 0 -g root -G root -s /bin/bash -d /home/test
+        if [ $? = '0' ]; then
+            green "增加root用户。。。完成✅✅✅！"
+        else
+            red "添加用户未成功！"
+        fi
     fi
 elif [[ ${reME} = "0" ]]; then
     blue -e "人之初（玩电脑），性本善（玩电脑）："
@@ -94,11 +102,34 @@ yellow "4. webmin面板"
 read -e -p "(输入为空则取消):" inMY
 if [[ ${inMY} == "1" ]]; then
     echo -e "宝塔面板>>>要执行的操作："
-    echo "1. 全新安装"
-    echo "2. 升级代码"
-    echo "3. 还原到官方最新版"
+    echo "1. 官方安装"
+    echo "2. 开心安装"
+    echo "3. 全新安装"
+    echo "4. 升级代码"
+    echo "5. 还原到官方最新版"
+    echo "6. 卸载宝塔"
     read -e -p "(输入为空则取消):" inBT
     if [[ ${inBT} == "1" ]]; then
+        if [[ ${MY} == "debian" ]]; then
+            # Debian全新安装命令：
+            wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && bash install.sh 12f2c1d72
+        elif [[ ${MY} == "ubuntu" ]]; then
+            # ubuntu/Deepin全新安装命令：
+            wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh 12f2c1d72
+        elif [[ ${MY} == "centos" ]]; then
+            # Centos全新安装命令：根据系统执行框内命令开始安装（大约2分钟完成面板安装）升级后可能需要重启面板
+            yum install -y wget && wget -O install.sh https://download.bt.cn/install/install_6.0.sh && sh install.sh 12f2c1d72
+        else
+            # Fedora全新安装命令：
+            curl -sSO https://download.bt.cn/install/install_panel.sh && bash install_panel.sh 12f2c1d72
+        fi
+    elif [[ ${inBT} == "2" ]]; then
+        wget -O install.sh http://f.cccyun.cc/bt/install_6.0.sh && bash install.sh
+        sed -i "s|bind_user == 'True'|bind_user == 'XXXX'|" /www/server/panel/BTPanel/static/js/index.js
+        rm -f /www/server/panel/data/bind.pl
+        curl -sSO https://raw.githubusercontent.com/ztkink/bthappy/main/one_key_happy.sh && bash one_key_happy.sh
+        wget -O optimize.sh http://f.cccyun.cc/bt/optimize.sh && bash optimize.sh
+    elif [[ ${inBT} == "3" ]]; then
         if [[ ${MY} == "debian" ]]; then
             # Debian全新安装命令：
             wget -O install.sh http://v7.hostcli.com/install/install-ubuntu_6.0.sh && bash install.sh
@@ -112,14 +143,17 @@ if [[ ${inMY} == "1" ]]; then
             # Fedora全新安装命令：
             wget -O install.sh http://v7.hostcli.com/install/install_6.0.sh && bash install.sh
         fi
-    elif [[ ${inBT} == "2" ]]; then
+    elif [[ ${inBT} == "4" ]]; then
         # 升级代码/修复面板：已经安装官方面板，执行下列命令升级到7.6.0纯净版：
         curl http://v7.hostcli.com/install/update6.sh|bash
         # 其他非官方版本含开心版、快乐版、纯净版等 7.4.5至7.6.0版本之间所有版本均可，执行下列命令升级到7.6.0纯净版：
         curl http://v7.hostcli.com/install/update6.sh|bash
-    elif [[ ${inBT} == "3" ]]; then
+    elif [[ ${inBT} == "5" ]]; then
         # 任意非官方版本还原到官方最新版：
         curl http://download.bt.cn/install/update6.sh|bash
+    elif [[ ${inBT} == "6" ]]; then
+        wget http://download.bt.cn/install/bt-uninstall.sh
+        sh bt-uninstall.sh
     fi
     if [ $? = '0' ]; then
         green "宝塔安装完成✅✅✅！"
