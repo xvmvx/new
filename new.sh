@@ -119,7 +119,7 @@ elif [[ ${inMY} == "2" ]]; then
     fi
 elif [[ ${inMY} == "3" ]]; then
     # Docker
-    source 13.sh
+    source docker.sh
     if [ $? = '0' ]; then
         green "Docker安装完成✅✅✅！"
     else
