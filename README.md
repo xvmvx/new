@@ -39,11 +39,11 @@
 - https://blog.laoda.de/archives/docker-compose-install-fireshare
 ## Cloudreve网盘
 - https://blog.laoda.de/archives/docker-compose-install-lighthouse-cloudreve
-## 个人知识库——Trilium
+## [个人知识库](http://165.22.62.26:73/)——Trilium
 - https://blog.laoda.de/archives/docker-compose-install-trilium
-## 个人网盘——FileRun
+## 个人网盘——[FileRun](http://165.22.62.26:74/)
 - https://blog.laoda.de/archives/docker-compose-install-filerun
-## Ubuntu的桌面系统
+## Ubuntu的[桌面系统](http://165.22.62.26:63/)
 - https://blog.laoda.de/archives/install-ubuntu-desktop
 ## Guacamole远程桌面网关服务
 - https://blog.laoda.de/archives/docker-install-guacamole
@@ -59,3 +59,4 @@
 - https://blog.laoda.de/archives/portainer
 ## [反向代理神器](http://165.22.62.26:81)——Nginx Proxy Manager
 https://blog.laoda.de/archives/nginxproxymanager
+## [platform](http://165.22.62.26:1228/)
