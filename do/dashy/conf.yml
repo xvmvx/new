@@ -1,0 +1,294 @@
+appConfig:
+  theme: dashy-docs
+  layout: auto
+  iconSize: medium
+  language: cn
+  auth:
+    users:
+      - user: goodway
+        hash: 0aa5e346d008d2ca8673dbdff13c10b49574503bf2a72da79f1e824a48333b95
+        type: admin
+      - user: way
+        hash: f65d34b106680dd96b0ba20415a260fde7ef49f744be0694d8eb23af90f50318
+        type: normal
+    enableGuestAccess: true
+pageInfo:
+  title: GuGu's Dashboard
+  description: 生命不息，折腾不止！咕～
+  navLinks:
+    - title: npm
+      path: http://165.22.62.26:81
+      target: newtab
+    - title: Fast OS docker
+      path: http://165.22.62.26:81
+      target: newtab
+    - title: YouTube
+      path: https://www.youtube.com/channel/UCJeNmdZBL8QahqCbzxj4l3Q
+      target: newtab
+    - title: Telegram群
+      path: https://t.me/laodade
+      target: newtab
+    - title: 请喝咖啡
+      path: https://blog.laoda.de/s/buy-me-a-coffee
+      target: newtab
+  footerText: 欢迎来找咕咕玩～
+sections:
+  - name: Memory Usage
+    icon: fas fa-memory
+    widgets:
+      - type: gl-current-mem
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_1166_glcurrentmem
+  - name: Getting Started
+    icon: fas fa-rocket
+    items:
+      - title: Dashy Live
+        description: Development a project management links for Dashy
+        icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
+        url: https://live.dashy.to/
+        target: newtab
+        id: 0_1481_dashylive
+      - title: GitHub
+        description: Source Code, Issues and Pull Requests
+        url: https://github.com/lissy93/dashy
+        icon: favicon
+        id: 1_1481_github
+      - title: Docs
+        description: Configuring & Usage Documentation
+        provider: Dashy.to
+        icon: far fa-book
+        url: https://dashy.to/docs
+        id: 2_1481_docs
+      - title: Showcase
+        description: See how others are using Dashy
+        url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
+        icon: far fa-grin-hearts
+        id: 3_1481_showcase
+      - title: Config Guide
+        description: See full list of configuration options
+        url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
+        icon: fas fa-wrench
+        id: 4_1481_configguide
+      - title: Support
+        description: Get help with Dashy, raise a bug, or get in contact
+        url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
+        icon: far fa-hands-helping
+        id: 5_1481_support
+  - name: 服务器相关
+    icon: fas fa-server
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Nginx Proxy Manager
+        description: 反向代理神器
+        icon: icons/dashboard-icons/png/nginxproxymanager.png
+        url: https://la-npm.laoda.de/
+        target: newtab
+        statusCheck: true
+        id: 0_120961_nginxproxymanager
+      - title: Portainer
+        description: 容器管理神器
+        icon: icons/dashboard-icons/png/portainer.png
+        url: https://portainer.laoda.de/
+        target: newtab
+        statusCheck: true
+        id: 1_120961_portainer
+      - title: qBittorrent
+        description: 下载神器
+        icon: icons/dashboard-icons/png/qbittorrent.png
+        url: http://193.29.62.197:8081/
+        target: newtab
+        statusCheck: true
+        id: 2_120961_qbittorrent
+      - title: UptimeKuma
+        icon: icons/dashboard-icons/png/uptime-kuma.png
+        url: https://uptime.laoda.de/
+        target: newtab
+        statusCheck: true
+        id: 3_120961_uptimekuma
+  - name: CPU Usage
+    icon: fas fa-tachometer
+    displayData:
+      rows: 2
+    widgets:
+      - type: gl-current-cpu
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_765_glcurrentcpu
+      - type: gl-current-cores
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 1_765_glcurrentcores
+  - name: 效率工具
+    icon: fas fa-battery-full
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Tinytiny RSS
+        description: RSS阅读
+        icon: icons/dashboard-icons/png/tinytinyrss.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 0_100395_tinytinyrss
+      - title: Yourls
+        icon: icons/dashboard-icons/png/yourls.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 1_100395_yourls
+      - title: EasyImages
+        icon: fas fa-image
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 2_100395_easyimages
+      - title: Joplin Server
+        icon: icons/dashboard-icons/png/joplin.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 3_100395_joplinserver
+      - title: Vaultwarden
+        icon: icons/dashboard-icons/png/bitwarden.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 4_100395_vaultwarden
+      - title: Wallabag
+        icon: icons/dashboard-icons/png/wallabag.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 5_100395_wallabag
+  - name: 文件管理
+    icon: fas fa-file
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Nextcloud
+        description: ''
+        icon: icons/dashboard-icons/png/nextcloud.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 0_107556_nextcloud
+      - title: Alist
+        icon: fas fa-file
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 1_107556_alist
+      - title: Wordpress
+        icon: icons/dashboard-icons/png/wordpress.png
+        id: 2_107556_wordpress
+      - title: Wikijs
+        icon: icons/dashboard-icons/png/wikijs.png
+        id: 3_107556_wikijs
+      - title: gugu
+        icon: icons/dashboard-icons/png/webdav.png
+        id: 4_107556_gugu
+  - name: 娱乐
+    icon: fas fa-film
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Navidrome
+        icon: icons/dashboard-icons/png/navidrome.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 0_43137_navidrome
+      - title: Jellyfin
+        icon: icons/dashboard-icons/png/jellyfin.png
+        url: ''
+        target: newtab
+        statusCheck: true
+        id: 1_43137_jellyfin
+      - title: xmrig
+        icon: icons/dashboard-icons/png/xmrig.png
+        id: 2_43137_xmrig
+      - title: Speedtest-tracker
+        icon: icons/dashboard-icons/png/speedtest-tracker.png
+        id: 3_43137_speedtesttracker
+  - name: Disk Space
+    icon: fas fa-hdd
+    widgets:
+      - type: gl-disk-space
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_919_gldiskspace
+  - name: CPU History
+    icon: fas fa-microchip
+    displayData:
+      cols: 2
+    widgets:
+      - type: gl-cpu-history
+        options:
+          hostname: http://95.179.242.122:61208
+          limit: 60
+        id: 0_1018_glcpuhistory
+  - name: System Alerts
+    icon: fas fa-sensor-alert
+    widgets:
+      - type: gl-alerts
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_1296_glalerts
+  - name: System Load
+    icon: fas fa-tasks-alt
+    widgets:
+      - type: gl-system-load
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_1061_glsystemload
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: true
+      hideForGuests: false
+  - name: Network Interfaces
+    icon: fas fa-ethernet
+    widgets:
+      - type: gl-network-interfaces
+        options:
+          hostname: http://95.179.242.122:61208
+          limit: 500
+        id: 0_1806_glnetworkinterfaces
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: true
+      hideForGuests: false
+  - name: Disk IO
+    icon: fas fa-disc-drive
+    widgets:
+      - type: gl-disk-io
+        options:
+          hostname: http://95.179.242.122:61208
+        id: 0_579_gldiskio
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: true
+      hideForGuests: false
