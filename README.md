@@ -1,9 +1,10 @@
 # new
 ## [new](https://github.com/xvmvx/new)是新安装系统的维护
 - [ssh22](https://github.com/xvmvx/new/ssh22.sh)更改端口的小脚本
+- [my.bashrc](https://github.com/xvmvx/new/my.bashrc)alias缩短命令使用
 - [docker](https://github.com/xvmvx/new/docker.sh)是为了docker的安装
-* [备用安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
-* [国产可视化面板](https://github.com/xvmvx/new/docker1.sh) [docker面板](https://github.com/xvmvx/new/docker1.sh)
+* [备用docker安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
+* [docker可视化面板](https://github.com/xvmvx/new/docker2.sh) [docker面板](https://github.com/xvmvx/new/docker3.sh)
 ## web面板blog
 ### [dashy](http://165.22.62.26:83/)是一个监控服务状态的面板工具。
 - 反代时注意端口选择Block一项,激活需要重启
