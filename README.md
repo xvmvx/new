@@ -21,10 +21,11 @@
 * [为知笔记](http://165.22.62.26:8123/)--------------[安装]( )[详见]()
 * [Joplin]()同步笔记软件--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-joplin-server)
 ### 网盘类
-* [aria2]()离线下载神器-----------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/aria2.sh)[详见](https://github.com/P3TERX/aria2.sh)
+* [aria2]离线下载神器-----------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/aria2.sh)[详见](https://github.com/P3TERX/aria2.sh)
+* [nextcloud](http://165.22.62.26:82/)--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/nextcloud.sh)[详见](https://github.com/nextcloud/all-in-one#nextcloud-all-in-one)
 * [Cloudreve]()--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-lighthouse-cloudreve)
 * [FileRun](http://165.22.62.26:74/)--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-filerun)
-* [nextcloud](http://165.22.62.26:82/)--------------[安装]( )[详见]()
+
 * [platform](http://165.22.62.26:1228/)--------------[安装]( )[详见]()
 * [Syncthing]()开源同步工具--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-syncthing)
 * [searxng](http://165.22.62.26:1008/)专注于搜索的--------------[安装]( )[详见]( )
