@@ -4,9 +4,10 @@
 - [my.bashrc](https://github.com/xvmvx/new/my.bashrc)alias缩短命令使用
 - [docker](https://github.com/xvmvx/new/docker.sh)是为了docker的安装
 * [备用docker安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
-* [docker可视化面板](https://github.com/xvmvx/new/docker2.sh) [docker面板](https://github.com/xvmvx/new/docker3.sh)
+* 可视化面板[Fast_OS_docker](https://github.com/xvmvx/new/docker2.sh) [docker面板](https://github.com/xvmvx/new/docker3.sh)
 ## web面板blog
 ### [dashy](http://165.22.62.26:83/)是一个监控服务状态的面板工具。
+- [安装]（https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh）
 - 反代时注意端口选择Block一项,激活需要重启
 - 注意后续，见 https://blog.laoda.de/archives/docker-compose-install-dashy
 ### [反向代理神器](http://165.22.62.26:81)——Nginx Proxy Manager
