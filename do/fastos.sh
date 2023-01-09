@@ -49,12 +49,12 @@ cd $folder_name
 docker run --restart always --name fast_os_docker -p $port_number1:8081 -p $port_number2:8082 -e TZ="Asia/Shanghai" -d -v /var/run/docker.sock:/var/run/docker.sock -v /etc/docker/:/etc/docker/ wangbinxingkong/fast:latest
 ip1=$(curl ifconfig.me)
 if [ $? = '0' ]; then
-      echo "fastos 安装成功✅✅✅！  端口:$port_number1"
-      echo "web地址：http：//$ip1:$port_number1"
-    elif [ $? != '0' ]; then
-        echo "安装失败，人工检查！"
-        exit 1
-    fi
+  echo "fastos 安装成功✅✅✅！  端口:$port_number1"
+  echo "web地址：http://$ip1:$port_number1"
+elif [ $? != '0' ]; then
+  echo "安装失败，人工检查！"
+  exit 1
+fi
 
 
 
