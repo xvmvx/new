@@ -47,7 +47,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    PS1="\[$(tput bold)\]\[\033[38;5;22m\]\[\033[48;5;122m\]\u\[$(tput sgr0)\]\$?\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;86m\]\[\033[48;5;28m\]\W\[$(tput sgr0) \]💎💎 \[$(tput sgr0)\]"
     ;;
 *)
     ;;
