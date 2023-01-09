@@ -9,8 +9,8 @@
 ## web面板blog
 ### 监控类
 * [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh)反代时注意端口选择Block一项,激活需要重启，[详见](https://blog.laoda.de/archives/docker-compose-install-dashy)
-* [Umami面板]()网站流量监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/umami)
-* [Ward面板]() 服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
+* [Umami面板](http://165.22.62.26:3000/)网站流量监控面板--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/umami.sh)[详见](https://blog.laoda.de/archives/umami)
+* [Ward面板]() 服务器监控面板--------------[安装]()[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
 * [ServerStatus面板]()服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
 * [Uptime Kuma面板]()网站监控--------------[安装]( )[详见](https://blog.laoda.de/archives/uptimekuma-install)
 ### blog
