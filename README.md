@@ -8,8 +8,7 @@
 * docker[Portainer-ce社区版](http://165.22.62.26:81)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh) [官网](https://www.portainer.io/)
 ## web面板blog
 ### 监控类
-* [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh)
-- 反代时注意端口选择Block一项,激活需要重启，[详见](https://blog.laoda.de/archives/docker-compose-install-dashy)
+* [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh)反代时注意端口选择Block一项,激活需要重启，[详见](https://blog.laoda.de/archives/docker-compose-install-dashy)
 * [Umami面板]()网站流量监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/umami)
 * [Ward面板]() 服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
 * [ServerStatus面板]()服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
@@ -29,30 +28,13 @@
 * [Syncthing]()开源同步工具--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-syncthing)
 * [searxng](http://165.22.62.26:1008/)专注于搜索的--------------[安装]( )[详见]( )
 * [Pingvin Share](http://165.22.62.26:1228/)--------------[安装]( )[详见]( )
-## 内网穿透--FRP+NPM+VPS
-- https://blog.laoda.de/archives/frp-with-nginx-proxy-manager
-## ？？？？？？ 楼兰图床
-- https://blog.laoda.de/archives/docker-compose-install-lskypro
-## ？？？？？？？ 加密鸽——cryptgeon
-- https://blog.laoda.de/archives/docker-compose-install-cryptgeon
-## ？？？？？？IM聊天系统——Rocket.chat
-- https://blog.laoda.de/archives/docker-compose-install-rocketchat
-
-## 视频下载服务——AllTube
-- https://blog.laoda.de/archives/docker-compose-install-alltube
-
-
-## 在线文件目录的程序--ZFile
-- https://blog.laoda.de/archives/docker-compose-install-zfile
-## 碎片化知识卡片管理工具——Memos
-- https://blog.laoda.de/archives/docker-install-memos
-## 视频分享网站——Fireshare
-- https://blog.laoda.de/archives/docker-compose-install-fireshare
-
-
-## Guacamole远程桌面网关服务
-- https://blog.laoda.de/archives/docker-install-guacamole
-## 网盘直链程序——AList
-- https://blog.laoda.de/archives/docker-install-alist
-
-
+* [FRP+NPM+VPS](https://blog.laoda.de/archives/frp-with-nginx-proxy-manager) 内网穿透--
+* [楼兰图床](https://blog.laoda.de/archives/docker-compose-install-lskypro)
+* [cryptgeon](https://blog.laoda.de/archives/docker-compose-install-cryptgeon) 内网穿透--
+* [Rocket.chat](https://blog.laoda.de/archives/docker-compose-install-rocketchat) IM聊天系统——
+* [AllTube](https://blog.laoda.de/archives/docker-compose-install-alltube)视频下载服务——
+* [ZFile](https://blog.laoda.de/archives/docker-compose-install-zfile)在线文件目录的程序--
+* [Memos](https://blog.laoda.de/archives/docker-install-memos)碎片化知识卡片管理工具——
+* [Fireshare](https://blog.laoda.de/archives/docker-compose-install-fireshare)#视频分享网站——
+* [Guacamole](https://blog.laoda.de/archives/docker-install-guacamole)远程桌面网关服务
+* [AList](https://blog.laoda.de/archives/docker-install-alist)网盘直链程序——
