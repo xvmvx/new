@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "即将安装【Fast OS Docker】--DOCKER容器可视化管理系统"
-echo "    通过可视化界面轻松构建您的docker环境，方便您docker环境的管理，远离命令式操作。大大提高您的工作效率，减少不必要的操作。"
+echo "即将安装【Portainer-ce】--DOCKER容器可视化管理系统"
+echo "    汉化社区版"
 
 # 判断是否安装docker
 if dpkg -l | grep -q docker; then
@@ -46,8 +46,7 @@ if lsof -i :$port_number2; then
 fi
 
 cd $folder_name
-docker run --restart always --name fast_os_docker -p $port_number1:8081 -p $port_number2:8082 -e TZ="Asia/Shanghai" -d -v /var/run/docker.sock:/var/run/docker.sock -v /etc/docker/:/etc/docker/ wangbinxingkong/fast:latest
-ip1=$(curl ifconfig.me)
+docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /root/public:/public portainer/portainer-ceip1=$(curl ifconfig.me)
 if [ $? = '0' ]; then
   echo "fastos 安装成功✅✅✅！  端口:$port_number1"
   echo "web地址：http://$ip1:$port_number1"
