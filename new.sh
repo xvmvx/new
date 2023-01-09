@@ -48,8 +48,8 @@ green "完成应用服务？（3），now。let‘s go！"
 read -p "所以请选择你的选择。。。" change
 if [[ ${change} = "1" ]]; then
     wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/1.sh && chmod +x 1.sh  && bash 1.sh
-if [[ ${change} = "2" ]]; then
+elif [[ ${change} = "2" ]]; then
      wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/2.sh && chmod +x 2.sh  && bash 2.sh
-if [[ ${change} = "3" ]]; then
+elif [[ ${change} = "3" ]]; then
      wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/3.sh && chmod +x 3.sh  && bash 3.sh
 fi
