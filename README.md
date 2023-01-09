@@ -4,8 +4,8 @@
 * [bashrc](https://github.com/xvmvx/new/my.bashrc)             ----------alias缩短命令使用
 * [Nginxp](http://165.22.62.26:81)                 ----------反向代理神器_________________[安装]()  [详见](https://blog.laoda.de/archives/nginxproxymanager)
 * [docker](https://github.com/xvmvx/new/docker.sh)----------是为了docker的安装；还有一个 [备用docker安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
-* 可视化面板[Fast_OS_docker](http://165.22.62.26:85)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/fastos.sh) [官网](https://www.dockernb.com/)
-* docker[Portainer-ce社区版](http://165.22.62.26:81)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh) [官网](https://www.portainer.io/)
+* [Fast_OS_docker](http://165.22.62.26:85)可视化面板----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/fastos.sh) [官网](https://www.dockernb.com/)
+* [Portainer-ce社区版](http://165.22.62.26:81)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh) [官网](https://www.portainer.io/)
 ## web面板blog
 ### 监控类
 * [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh)反代时注意端口选择Block一项,激活需要重启，[详见](https://blog.laoda.de/archives/docker-compose-install-dashy)
