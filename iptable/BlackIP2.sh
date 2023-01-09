@@ -1,0 +1,11 @@
+#输出其他系统使用的文件
+#脚本预配置了RouterOS系统和OpenClash系统使用的防火墙规则文件，填写了webfolder路径变量后更新时会生成文件
+webfolder=
+rosname="BlacklistData"
+opname="OpenClash"
+#IPSet使用的集名称
+IPSetlist="Rblacklist"
+#cache是获取网络黑名单的原内容
+cache="/tmp/blacklist.cache"
+#iplist是经过去重整理的内容
+iplist="/tmp/BlackCIDR"
