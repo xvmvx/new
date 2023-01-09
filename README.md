@@ -7,32 +7,28 @@
 * 可视化面板[Fast_OS_docker](http://165.22.62.26:85)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/fastos.sh) [官网](https://www.dockernb.com/)
 * docker[Portainer-ce社区版](http://165.22.62.26:81)----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh) [官网](https://www.portainer.io/)
 ## web面板blog
-### [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。
-- [安装]（https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh）
+### 监控类
+* [dashy面板](http://165.22.62.26:83/)是一个监控服务状态的面板工具。--------------[安装](https://raw.githubusercontent.com/xvmvx/new/main/dashy.sh)
 - 反代时注意端口选择Block一项,激活需要重启，[详见](https://blog.laoda.de/archives/docker-compose-install-dashy)
-### [Hexo 面板](http://165.22.62.26:999/)blog在线管理
-- https://blog.laoda.de/archives/docker-compose-install-hexo-admin-and-twikoo
-### [Wiki.js](http://165.22.62.26:72)Wiki软件——
-- https://blog.laoda.de/archives/docker-compose-install-wikijs
-### [ noVPN](http://165.22.62.26:63/)Ubuntu的桌面系统
-- https://blog.laoda.de/archives/install-ubuntu-desktop
-### [Trilium](http://165.22.62.26:73/)个人知识库——
-- https://blog.laoda.de/archives/docker-compose-install-trilium
-### [为知笔记](http://165.22.62.26:8123/)
-### 同步笔记软件——Joplin
-- https://blog.laoda.de/archives/docker-compose-install-joplin-server
-## 网盘类
-### Cloudreve网盘
-- https://blog.laoda.de/archives/docker-compose-install-lighthouse-cloudreve
-### 个人网盘——[FileRun](http://165.22.62.26:74/)
-- https://blog.laoda.de/archives/docker-compose-install-filerun
-### [nextcloud](http://165.22.62.26:82/)
-### [platform](http://165.22.62.26:1228/)
-### 开源同步工具——Syncthing
-- https://blog.laoda.de/archives/docker-compose-install-syncthing
-### 专注于搜索的[searxng](http://165.22.62.26:1008/)
-
-[Pingvin Share](http://165.22.62.26:1228/)
+* [Umami面板]()网站流量监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/umami)
+* [Ward面板]() 服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
+* [ServerStatus面板]()服务器监控面板--------------[安装]( )[详见](https://blog.laoda.de/archives/ward-serverstatus-install)
+* [Uptime Kuma面板]()网站监控--------------[安装]( )[详见](https://blog.laoda.de/archives/uptimekuma-install)
+### blog
+* [Hexo 面板](http://165.22.62.26:999/)blog在线管理--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-hexo-admin-and-twikoo)
+* [Wiki.js](http://165.22.62.26:72)Wiki软件--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-wikijs)
+* [noVPN](http://165.22.62.26:63/)Ubuntu的桌面系统--------------[安装]( )[详见](https://blog.laoda.de/archives/install-ubuntu-desktop)
+* [Trilium](http://165.22.62.26:73/)个人知识库--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-trilium)
+* [为知笔记](http://165.22.62.26:8123/)--------------[安装]( )[详见]()
+* [Joplin]()同步笔记软件--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-joplin-server)
+### 网盘类
+* [Cloudreve]()--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-lighthouse-cloudreve)
+* [FileRun](http://165.22.62.26:74/)--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-filerun)
+* [nextcloud](http://165.22.62.26:82/)--------------[安装]( )[详见]()
+* [platform](http://165.22.62.26:1228/)--------------[安装]( )[详见]()
+* [Syncthing]()开源同步工具--------------[安装]( )[详见](https://blog.laoda.de/archives/docker-compose-install-syncthing)
+* [searxng](http://165.22.62.26:1008/)专注于搜索的--------------[安装]( )[详见]( )
+* [Pingvin Share](http://165.22.62.26:1228/)--------------[安装]( )[详见]( )
 ## 内网穿透--FRP+NPM+VPS
 - https://blog.laoda.de/archives/frp-with-nginx-proxy-manager
 ## ？？？？？？ 楼兰图床
@@ -58,10 +54,5 @@
 - https://blog.laoda.de/archives/docker-install-guacamole
 ## 网盘直链程序——AList
 - https://blog.laoda.de/archives/docker-install-alist
-## 网站流量监控——Umami
-- https://blog.laoda.de/archives/umami
-## 服务器监控——Ward && ServerStatus
-- https://blog.laoda.de/archives/ward-serverstatus-install
-## 网站监控——Uptime Kuma
-- https://blog.laoda.de/archives/uptimekuma-install
+
 
