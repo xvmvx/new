@@ -1,20 +1,22 @@
 # new
-## new是新安装系统的维护
-- ssh22更改端口
-- docker是为了docker的安装
-##web面板blog
+## [new](https://github.com/xvmvx/new)是新安装系统的维护
+- [ssh22](https://github.com/xvmvx/new/ssh22.sh)更改端口的小脚本
+- [docker](https://github.com/xvmvx/new/docker.sh)是为了docker的安装
+* [备用安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
+* [国产可视化面板](https://github.com/xvmvx/new/docker1.sh) [docker面板](https://github.com/xvmvx/new/docker1.sh)
+## web面板blog
 ### [dashy](http://165.22.62.26:83/)是一个监控服务状态的面板工具。
 - 反代时注意端口选择Block一项,激活需要重启
 - 注意后续，见 https://blog.laoda.de/archives/docker-compose-install-dashy
 ### [反向代理神器](http://165.22.62.26:81)——Nginx Proxy Manager
 https://blog.laoda.de/archives/nginxproxymanager
-### [Hexo在线管理](http://165.22.62.26:999/)
+### blog在线管理[Hexo](http://165.22.62.26:999/)
 - https://blog.laoda.de/archives/docker-compose-install-hexo-admin-and-twikoo
-### [Wiki软件——Wiki.js](http://165.22.62.26:72)
+### Wiki软件——[Wiki.js](http://165.22.62.26:72)
 - https://blog.laoda.de/archives/docker-compose-install-wikijs
-## Ubuntu的[桌面系统](http://165.22.62.26:63/)
+### Ubuntu的桌面系统[noVPN](http://165.22.62.26:63/)
 - https://blog.laoda.de/archives/install-ubuntu-desktop
-### [个人知识库](http://165.22.62.26:73/)——Trilium
+### 个人知识库——[Trilium](http://165.22.62.26:73/)
 - https://blog.laoda.de/archives/docker-compose-install-trilium
 ### Docker可视化面板——Portainer
 - https://blog.laoda.de/archives/portainer
@@ -30,9 +32,9 @@ https://blog.laoda.de/archives/nginxproxymanager
 ### [platform](http://165.22.62.26:1228/)
 ### 开源同步工具——Syncthing
 - https://blog.laoda.de/archives/docker-compose-install-syncthing
+### 专注于搜索的[searxng](http://165.22.62.26:1008/)
 
-
-
+[Pingvin Share](http://165.22.62.26:1228/)
 ## 内网穿透--FRP+NPM+VPS
 - https://blog.laoda.de/archives/frp-with-nginx-proxy-manager
 ## ？？？？？？ 楼兰图床
