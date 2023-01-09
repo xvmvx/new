@@ -52,52 +52,67 @@ myIP1=$(curl ip.sb)
 myIP2=$(ip route get 1 | awk '{print $7;exit}')
 yellow "${logo1}"
 red "########################################"
+    blue -e "人            性"
+    blue -e "  之        本"
+    blue -e "    初    善"
+    green -e "     王8蛋"
+red "美好的人生从这里开始。。。"
+yellow "升级你的系统？（1），yes。you do！"
+blue "部署基础环境？（2），yes。you can！"
+green "完成应用服务？（3），now。let‘s go！"
+read -p "所以请选择你的选择。。。" change
+if [[ ${change} = "1" ]]; then
+
+if [[ ${change} = "2" ]]; then
+
+if [[ ${change} = "3" ]]; then
+
+fi
+# 系统升级
 blue "工欲善其事，必先利其器！"
-green "从优化系统环境开始（y），当然，你可以选择其他的更多选择（0）。。。。。。。"
-read -p "所以请选择你的选择，除非跳过时按0，就直接回车吧。。。" reME
-if [[ ${reME} = "y" ]]; then
-    if [[ ${MY} == "debian" ]]; then
-      sudo apt-get update && sudo apt-get upgrade
-      sudo apt-get install git wget vim lsof unzip
-    elif [[ ${MY} == "ubuntu" ]]; then
-      sudo apt-get update && sudo apt-get upgrade
-      sudo apt-get install git wget vim lsof unzip
-    elif [[ ${MY} == "centos" ]]; then
-      sudo yum update && sudo yum upgrade
-      yum install wget git vim
-    fi
+green "从优化系统环境开始（1），当然，你可以选择其他的更多选。。。。。。。"
+read -p "所以请选择你的选择，确认升级（1)。。。" reME
+if [[ ${reME} = "1" ]]; then
+    wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/shengji.sh && chmod +x shengji.sh  && bash shengji.sh
     green "系统更新。。。完成✅✅✅！"
+fi
+
+# 设置alias
+green "天下武功，唯快不破。。。想要加快操作的速度（1），当然，你可以选择其他的更多选择。。。。。。。"
+read -p "所以请选择你的选择，确认使用alias（1)。。。" realias
+if [[ ${realias} = "1" ]]; then
     mv ~/.bashrc ~/.bashrc.back
     cp my.bashrc ~/.bashrc
     source ~/.bashrc
     green "linux命令alias化。。。完成✅✅✅！"
+fi
+
+#设置时区
+green "切莫在数着他国星辰，渡着自己光阴。。。较正时区（1），当然，你可以选择其他的更多选择。。。。。。。"
+read -p "所以请选择你的选择，修改为上海时区（1)。。。" retime
+if [[ ${retime} = "1" ]]; then
     sudo timedatectl set-timezone Asia/Shanghai #改成上海
     green "更改时区为上海。。。完成✅✅✅！"
-    read -p "修改SSH端口号（y），确认修改：       " changeSSH
-    if [[ "$changeSSH" = "y" ]] ; then
-      source ssh22.sh
-      green "更改SSH端口。。。完成✅✅✅！"
-    fi
-    read -p "增加root用户（y），确认添加：       " addUS
-    if [[ "$addUS" = "y" ]] ; then
-        echo "输入要添加的用户名"
-        read -p ":    " name 
-        echo "输入该用户的密码"
-        read -p ":    " pass 
-        useradd -p `openssl passwd -1 -salt 'salt' $pass` $name -o -u 0 -g root -G root -s /bin/bash -d /home/test
-        if [ $? = '0' ]; then
-            green "增加root用户。。。完成✅✅✅！"
-        else
-            red "添加用户未成功！"
-            red "手动添加请使用  adduser 添加的用户名"
-            yellow " 修改 /etc/sudoers 文件，在root ALL=(ALL) ALL下面添加一行，如下所示："
-            red "用户名 ALL=(ALL) ALL "
-            yellow " 然后修改用户，使其属于root组（wheel），命令如下："
-            red "usermod -g root 用户名"
-        fi
-    fi
+fi
+
+#更改ssh端口
+green "不怕贼偷，就怕贼惦记！从源头死了他的心（1），当然，你可以选择其他的更多选择。。。。。。。"
+read -p "所以请选择你的选择，更改SSH端口（1)。。。" retime
+if [[ ${retime} = "1" ]]; then
+    wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/ssh22.sh && chmod +x ssh22.sh  && bash ssh22.sh
+    green "更改SSH端口。。。完成✅✅✅！"
+fi
+
+#更改ssh端口
+green "分身？遁形？是否还记得你心里的那个我是哪个我？（1），当然，你可以选择其他的更多选择。。。。。。。"
+read -p "所以请选择你的选择，增加新的root用户（1)。。。" retime
+if [[ ${retime} = "1" ]]; then
+    wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/addUSER.sh && chmod +x addUSER.sh  && bash addUSER.sh
+    green "增加root用户。。。完成✅✅✅！"
+fi
+
 elif [[ ${reME} = "0" ]]; then
-    blue -e "人之初（玩电脑），性本善（玩电脑）："
+
 fi
 blue -e "请选择要安装的面板："
 yellow "1. 宝塔面板"
