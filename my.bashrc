@@ -101,9 +101,9 @@ fi
 alias mysql='docker exec -it  mysql bash'
 de() { docker exec -it "$1" /bin/bash;}
 alias psqlsu='su postgres'
-psqlin(){ psql -U "$1" -W}
-psqluser(){ CREATE USER "$1" WITH PASSWORD "$2";}
-psqldb(){ CREATE DATABASE "$1" OWNER "$2";}
+psqlin() { psql -U "$1" -W}
+psqluser() { CREATE USER "$1" WITH PASSWORD "$2";}
+psqldb() { CREATE DATABASE "$1" OWNER "$2";}
 t() {
     if [ -f $1 ] ; then
       case $1 in
