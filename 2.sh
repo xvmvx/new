@@ -48,16 +48,15 @@ elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
   release="centos"
 fi
 clear
-MY=${release}
+wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/MY.sh && chmod +x MY.sh  && bash MY.sh
 myIP1=$(curl ip.sb)
 myIP2=$(ip route get 1 | awk '{print $7;exit}')
 yellow "${logo1}"
 red "########################################"
-blue -e "请选择要安装的面板："
-yellow "1. 宝塔面板"
-yellow "2. AMH面板"
-yellow "3. DOCKER"
-yellow "4. webmin面板"
+blue -e "一些面板，如宝塔（1），如AMH（2）管理类："
+yellow "还有 webmin面板（3），绚彩（4），等等等"
+yellow "环境，比如Docker（5），等吧"
+yellow "   "
 read -e -p "(输入为空则取消):" inMY
 if [[ ${inMY} == "1" ]]; then
     echo -e "宝塔面板>>>要执行的操作："
@@ -128,14 +127,6 @@ elif [[ ${inMY} == "2" ]]; then
         red "安装失败，人工检查！"
     fi
 elif [[ ${inMY} == "3" ]]; then
-    # Docker
-    source docker.sh
-    if [ $? = '0' ]; then
-        green "Docker安装完成✅✅✅！"
-    else
-        red "安装失败，人工检查！"
-    fi
-elif [[ ${inMY} == "4" ]]; then
     if [[ ${MY} == "centos" ]]; then
         (echo "[Webmin]
         name=Webmin Distribution Neutral
@@ -155,4 +146,11 @@ elif [[ ${inMY} == "4" ]]; then
     else
         red "安装失败，人工检查！"
     fi
+
+elif [[ ${inMY} == "4" ]]; then
+    wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/do/dashy/dashy.sh  && chmod +x dashy.sh  && bash dashy.sh
+    
+    # Docker
+elif [[ ${inMY} == "4" ]]; then
+    wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/docker.sh  && chmod +x docker.sh  && bash docker.sh    
 fi
