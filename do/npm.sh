@@ -62,6 +62,12 @@ echo "      - ./letsencrypt:/etc/letsencrypt" >> $folder_name/docker-compose.yml
 # 进入文件夹并开始执行
 cd $folder_name
 docker-compose up -d
-if [ "$？" = '0' ]; then
+
+ip1=$(curl ifconfig.me)
+if [ $? = '0' ]; then
   echo "npm 安装成功✅✅✅！  端口:81"
-  echo "you are setting username : ${name}"
+  echo "web地址：http://$ip1:$port_number1"
+elif [ $? != '0' ]; then
+  echo "安装失败，人工检查！"
+  exit 1
+fi
