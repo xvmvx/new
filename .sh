@@ -95,15 +95,7 @@ if [ ${#inCHANGE} = "1" ]; then
             green "39   Memos"
         ;;
         5)
-            green "51   Docker官方安装"
-            green "52   Docker-compose官方"
-            green "33   Fireshare"
-            green "34   platform"
-            green "35   searxng"
-            green "36   Pingvin"
-            green "37   Syncthing"
-            green "38   ZFile"
-            green "39   Memos"
+            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
         ;;
         *)
             clear
