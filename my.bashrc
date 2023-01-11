@@ -66,17 +66,19 @@ fi
 PS1="\[\e[37;40m\][\[\e[30;42m\]\u\[\e[37;41m\]♚\h \[\e[37;44m\]\w\[\e[0m\]]\\$"
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'        
-alias l.='ls -la'
-alias ..='cd ..'
+
 alias ...='cd ../..'
 alias cd~='cd ~'
 alias cc='cd /'
-alias r='rm -rf'
 alias dc='docker-compose up -d'
 alias dv='vim docker-compose.yml'
-b() { iptables -I INPUT -s "$1"; -j DROP;}
 alias cdd='cd /docker; ls;'   # 进入并打开
+b() { iptables -I INPUT -s "$1"; -j DROP;}
+alias r='rm -rf'
+alias n='source ~/.sh'
+alias l='ls -CF'        
+alias l.='ls -la'
+alias ..='cd ..'
 c() { cd "$1"; ls;}   # 进入并打开
 m() { mkdir -p "$1"; cd "$1";}  # 创建并进入
 alias dps='docker ps'
@@ -91,8 +93,8 @@ alias v='vim'
 alias a='alias'
 alias f='find / -name'
 alias ch='chmod +x'
-alias salias='source ~/.bashrc'
-alias valias='vim ~/.bashrc'
+alias s='source ~/.bashrc'
+alias va='vim ~/.bashrc'
 alias upda='sudo apt-get update && sudo apt-get upgrade'
 alias nnn='nmon'
 if [ -f ~/.bash_aliases ]; then
