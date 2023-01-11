@@ -215,4 +215,3 @@ case "$action" in
     echo "用法: {modify|end}"
     ;;
 esac
-Footer
