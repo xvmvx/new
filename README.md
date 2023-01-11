@@ -1,7 +1,7 @@
 # new
 ## [new](https://github.com/xvmvx/new)是新安装系统的维护
-* [ssh-22](https://github.com/xvmvx/new/ssh22.sh)            ----------更改端口的小脚本
-* [bashrc](https://github.com/xvmvx/new/my.bashrc)             ----------alias缩短命令使用
+* [ssh-22](https://raw.githubusercontent.com/xvmvx/new/main/ssh22.sh)            ----------更改端口的小脚本
+* [bashrc](https://raw.githubusercontent.com/xvmvx/new/main/my.bashrc)             ----------alias缩短命令使用
 * [Nginxp](http://165.22.62.26:81)                 ----------反向代理神器_________________[安装]()  [详见](https://blog.laoda.de/archives/nginxproxymanager)
 * [docker](https://github.com/xvmvx/new/docker.sh)----------是为了docker的安装；还有一个 [备用docker安装](https://github.com/xvmvx/new/docker1.sh)一键安装的一个脚本 
 * [Fast_OS_docker](http://165.22.62.26:85)可视化面板----------[安装](https://raw.githubusercontent.com/xvmvx/new/main/do/fastos.sh) [官网](https://www.dockernb.com/)
