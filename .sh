@@ -46,6 +46,8 @@ blue "          2)系列------网盘类"
 green "比如离线下载ari2/nextcloud云等"
 blue "          3)系列------目录类"
 green "比如图床在线笔记远程桌面等"
+blue "          5)系列------Docker类"
+green "比如图床在线笔记远程桌面等"
 yellow "输入对应数字浏览相关细节，返回 00 "
 read -p ":   " inCHANGE
 if [ ${#inCHANGE} = "1" ]; then
@@ -84,6 +86,17 @@ if [ ${#inCHANGE} = "1" ]; then
         3)
             green "31   楼兰图床"
             green "32   AllTube"
+            green "33   Fireshare"
+            green "34   platform"
+            green "35   searxng"
+            green "36   Pingvin"
+            green "37   Syncthing"
+            green "38   ZFile"
+            green "39   Memos"
+        ;;
+        5)
+            green "51   Docker官方安装"
+            green "52   Docker-compose官方"
             green "33   Fireshare"
             green "34   platform"
             green "35   searxng"
