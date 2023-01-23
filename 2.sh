@@ -53,10 +53,16 @@ myIP1=$(curl ip.sb)
 myIP2=$(ip route get 1 | awk '{print $7;exit}')
 yellow "${logo1}"
 red "########################################"
-blue -e "一些面板，如宝塔（1），如AMH（2）管理类："
-yellow "还有 webmin面板（3），绚彩（4），等等等"
-yellow "环境，比如Docker（5），等吧"
-yellow "   "
+blue   "一些面板，目的是 方便  高效  快速  管理"
+green "如管理类："
+yellow "宝塔       （1）"
+yellow "AMH       （2）"
+green "如监控类："
+yellow "webmin    （3）"
+yellow "dashy     （4）"
+green "其实也可以进入docker安装的"
+yellow "docker    （5）"
+blue   "拭目以待结果，lets go"
 read -e -p "(输入为空则取消):" inMY
 if [[ ${inMY} == "1" ]]; then
     echo -e "宝塔面板>>>要执行的操作："
@@ -151,6 +157,6 @@ elif [[ ${inMY} == "4" ]]; then
     wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/do/dashy/dashy.sh  && chmod +x dashy.sh  && bash dashy.sh
     
     # Docker
-elif [[ ${inMY} == "4" ]]; then
+elif [[ ${inMY} == "5" ]]; then
     wget -N --no-check-certificate  https://raw.githubusercontent.com/xvmvx/new/main/docker.sh  && chmod +x docker.sh  && bash docker.sh    
 fi
