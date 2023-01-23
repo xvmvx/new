@@ -1,25 +1,31 @@
 #!/bin/bash
 echo "即将安装【Portainer-ce】--DOCKER容器可视化管理系统"
-echo "    汉化社区版"
+echo "默认安装在 docker/portainer文件夹"
+echo "默认使用1800 1900端口"
 
 # 判断是否安装docker
-if dpkg -l | grep -q docker; then
-  echo "docker已安装"
-else
-  # 安装docker
-  sudo apt-get update
-  sudo apt-get install docker
-fi
+sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do_test.sh -O -)"
 
-# 判断是否安装docker Compose 
-if dpkg -l | grep -q docker-compose; then
-  echo "Docker Compose已安装."
+echo "默认安装在 docker/portainer文件夹"
+echo "默认使用1800 1900端口"
+cd / 
+cd docker
+if [ $? = '0' ]; then
+  rm -rf portainer
 else
-  # 安装Docker Compose
-  sudo apt-get update
-  sudo apt-get install docker-compose
+  cd /
+  mkdir docker
+  cd docker
 fi
-
+mkdir portainer
+cd portainer
+echo "默认安装在 docker/portainer文件夹"
+pwd
+read -p "打印位置是否正确？正确请按y " folder_name
+if [ "$folder_name" != "y" ]; then
+  red "那退出本程序，手动进入到docker/portainer再进行后续操作"
+  exit
+fi
 # 录入需要保存的文件夹
 read -p "输入要保存的位置: " folder_name
 
@@ -28,25 +34,22 @@ if [ ! -d "$folder_name" ]; then
   mkdir $folder_name
 fi
 
-# 输入需要映射的端口
-read -p "输入需要映射的http端口：   " port_number1
-
 # 判断端口是否占用
-if lsof -i :$port_number1; then
+if lsof -i:1800 ; then
   # 判断端口是否占用，如占用重新输入
   read -p "端口 $port_number1 已经被使用，请录入新的端口: " port_number1
+else
+  port_number1 = 1800
 fi
-
-read -p "输入需要映射的https端口：   " port_number2
 
 # 判断端口是否占用
-if lsof -i :$port_number2; then
+if lsof -i:1900 ; then
   # 判断端口是否占用，如占用重新输入
   read -p "端口 $port_number2 已经被使用，请录入新的端口: " port_number2
+else
+  port_number2 = 1900
 fi
-
-cd $folder_name
-docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data -v /root/public:/public portainer/portainer-ceip1=$(curl ifconfig.me)
+docker run -d -p $port_number1:8000 -p $port_number1:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /dockers/portainer/data:/data portainer/portainer-ce
 if [ $? = '0' ]; then
   echo "fastos 安装成功✅✅✅！  端口:$port_number1"
   echo "web地址：http://$ip1:$port_number1"
