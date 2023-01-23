@@ -62,6 +62,9 @@ yellow "docker集成安装包              （3）"
 green "docker一键安装："
 yellow "docker一键安装包              （4）"
 yellow "docker一键安装包              （5）"
+green "docker错误修复："
+yellow "docker守护进程错误             （6）"
+yellow "   "
 blue   "拭目以待结果，lets go"
 read -e -p "(输入为空则取消):" inMY
 if [[ "$inMY" = "1" ]]; then
@@ -135,18 +138,36 @@ elif [[ "$inMY" = "4" ]]; then
        red "安装失败，自己检查检查"
     fi
 elif [[ "$inMY" = "5" ]]; then
-  yellow "安装Docker一键安装包的另一版本："
-  curl -fsSL https://get.docker.com | bash -s docker
-    if [ $? = '0' ]; then
-       green "Docker...安装完成✅✅✅！"
-       yellow "强烈建议对Docker进行优化，听我的，按y"
-       read character1
-       if [ "$character1" = "y" ]; then
-           sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
-       fi
-    else
-       red "安装失败，自己检查检查"
-    fi
+  yellow "修复Docker守护进程错误："
+  sudo systemctl unmask docker
+  systemctl start docker
+  systemctl status docker
+  green "如果现在个绿灯加一堆前面一样的数据行，说明修复成功✅✅✅！"
+  yellow "修复失败可以选择下面方案继续修复，方案1（1），方案2（2），方案3（3），方案4（4）"
+  read fangan
+  if [ "$fangan" = "1" ]; then
+    systemctl unmask docker.service
+    systemctl unmask docker.socket
+    systemctl start docker.service
+    sudo su
+    service docker stop
+    cd /var/run/docker/libcontainerd
+    rm -rf containerd/*
+    rm -f docker-containerd.pid
+    service docker start
+  elif [ "$fangan" = "2" ]; then
+    sudo dockerd
+  elif [ "$fangan" = "3" ]; then
+    sudo service --status-all
+    sudo service docker start
+  elif [ "$fangan" = "4" ]; then
+    sudo snap start docker
+    sudo snap services
+    sudo snap connect docker:home :home
+    sudo snap start docker
+  elif [ "$fangan" = "5" ]; then
+    export DOCKER_HOST=tcp://localhost:2375
+  fi
 elif [[ "$inMY" = "6" ]]; then
   yellow "安装Docker一键安装包的又一版本："
   sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker1.sh -O -)"
