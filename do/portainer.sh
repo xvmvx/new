@@ -41,5 +41,6 @@ if [ $? = '0' ]; then
   echo "web地址：http://$ip1:$port_number1"
 elif [ $? != '0' ]; then
   echo "安装失败，人工检查！命令如下，自行酌情修改并运行"
+   echo "docker run -d -p 1800:8000 -p 1900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /dockers/portainer/data:/data portainer/portainer-ce"
   exit 1
 fi
