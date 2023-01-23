@@ -109,67 +109,67 @@ elif [ ${#inCHANGE}  = "0" ]; then
     red "请输入正确数字 !"
 fi
 #01 更改端口的小脚本
-function a01(){
+function a01() {
 # wget -O "/root/unixbench.sh" "https://raw.githubusercontent.com/BlueSkyXN/ChangeSource/master/unixbench.sh" --no-check-certificate -T 30 -t 5 -d
 # curl -o- -L https://raw.githubusercontent.com/xvmvx/new/main/ssh22.sh | bash -s -- --version 0.16.1
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/ssh22.sh -O -)"
 }
 #02   alias缩短命令使用
-function a02(){
+function a02() {
 wget https://raw.githubusercontent.com/xvmvx/new/main/my.bashrc
 mv /my.bashrc ~/.bashrc
 source ~/.bashrc
 }
 #03   宝塔面板的相关操作
-function a03(){
+function a03() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/baota.sh -O -)"
 }
 #04   nginx反向代理管理
-function a04(){
+function a04() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/npm.sh -O -)"
 }
 #05   Docker相关的操作
-function a05(){
+function a05() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh-O -)"
 }
 #06   Fast OS面板的安装
-function a06(){
+function a06() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/fastos.sh -O -)"
 }
 #07   Docker可视面板安装"
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #11   dashy面板
-function a11(){
+function a11() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/dashy/dashy.sh -O -)"
 }
 #12   Hexo 面板  ???????????
-function a12(){
+function a12() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #13   Ward面板
-function a13(){
+function a13() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/ward.sh -O -)"
 }
 #14   ServerStatus面板
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #15   Uptime Kuma面板
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #16   Guacamole远程RAC&SSH
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #17   VPN & noVPN
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #18   cryptgeon
-function a07(){
+function a07() {
 sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/do/portainer.sh -O -)"
 }
 #19   FRP+NPM+VP"
