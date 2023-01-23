@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "即将安装【npm】--反向代理神器"
-echo "    请确保80.81.443端口正常开放"
+echo "    请确保1080.1081.10443端口正常开放"
 
 # 判断是否安装docker
 if dpkg -l | grep -q docker; then
@@ -52,9 +52,9 @@ echo "  npm:" >> $folder_name/docker-compose.yml
 echo "    image: 'jc21/nginx-proxy-manager:latest'" >> $folder_name/docker-compose.yml
 echo "    restart: unless-stopped" >> $folder_name/docker-compose.yml
 echo "    ports:" >> $folder_name/docker-compose.yml
-echo "      - '80:80'" >> $folder_name/docker-compose.yml
-echo "      - '81:81'" >> $folder_name/docker-compose.yml
-echo "      - '443:443'" >> $folder_name/docker-compose.yml
+echo "      - '1080:80'" >> $folder_name/docker-compose.yml
+echo "      - '1081:81'" >> $folder_name/docker-compose.yml
+echo "      - '10443:443'" >> $folder_name/docker-compose.yml
 echo "    volumes:" >> $folder_name/docker-compose.yml
 echo "      - ./data:/data" >> $folder_name/docker-compose.yml
 echo "      - ./letsencrypt:/etc/letsencrypt" >> $folder_name/docker-compose.yml
@@ -68,6 +68,18 @@ if [ $? = '0' ]; then
   echo "npm 安装成功✅✅✅！  端口:81"
   echo "web地址：http://$ip1:$port_number1"
 elif [ $? != '0' ]; then
-  echo "安装失败，人工检查！"
+  echo "安装失败，人工检查！参考代码如下，自行修改并运行
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'  # 冒号左边可以改成自己服务器未被占用的端口
+      - '81:81'  # 冒号左边可以改成自己服务器未被占用的端口
+      - '443:443' # 冒号左边可以改成自己服务器未被占用的端口
+    volumes:
+      - ./data:/data # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中
+      - ./letsencrypt:/etc/letsencrypt  # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 letsencrypt 文件夹中 "
   exit 1
 fi
