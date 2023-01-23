@@ -40,6 +40,6 @@ if [ $? = '0' ]; then
   echo "fastos 安装成功✅✅✅！  端口:$port_number1"
   echo "web地址：http://$ip1:$port_number1"
 elif [ $? != '0' ]; then
-  echo "安装失败，人工检查！"
+  echo "安装失败，人工检查！命令如下，自行酌情修改并运行"
   exit 1
 fi
