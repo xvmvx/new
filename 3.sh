@@ -66,26 +66,26 @@ blue   "拭目以待结果，lets go"
 read -e -p "(输入为空则取消):" inMY
 if [[ "$inMY" = "1" ]]; then
     yellow "安装Docker官方："
-    sudo apt-get remove docker docker-engine docker.io containerd runc
-    sudo apt-get update 
-    sudo apt-get install  ca-certificates  curl  gnupg  lsb-release
-    sudo mkdir -p /etc/apt/keyrings
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
-    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+        apt-get remove docker docker-engine docker.io containerd runc
+        apt-get update
+        apt-get install ca-certificates curl gnupg lsb-release
+        mkdir -p /etc/apt/keyrings
+        curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
+          $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+        apt-get update
+        apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
     if [ $? = '0' ]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
        red "安装失败，是否尝试一键安装（Y)！"
        read character
-       if [ "$character" = "y" ]: then
+       if [ "$character" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker1.sh -O -)"
        fi
     fi
@@ -98,13 +98,13 @@ elif [[ "$inMY" = "2" ]]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
        red "安装失败，是否尝试一键安装（Y)！"
        read character
-       if [ "$character" = "y" ]: then
+       if [ "$character" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker1.sh -O -)"
        fi
     fi
@@ -115,7 +115,7 @@ elif [[ "$inMY" = "3" ]]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
@@ -128,7 +128,7 @@ elif [[ "$inMY" = "4" ]]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
@@ -141,7 +141,7 @@ elif [[ "$inMY" = "5" ]]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
@@ -154,7 +154,7 @@ elif [[ "$inMY" = "6" ]]; then
        green "Docker...安装完成✅✅✅！"
        yellow "强烈建议对Docker进行优化，听我的，按y"
        read character1
-       if [ "$character1" = "y" ]: then
+       if [ "$character1" = "y" ]; then
            sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/docker.sh -O -)"
        fi
     else
