@@ -18,7 +18,6 @@ green "其中包括详细的统计、分析、还可以安装一些插件"
 yellow "相关地址"
 
 green "那我们就开始安装吧，now。let‘s go！"
-sudo -i
 yellow "注意信息"
 mkdir -p /docker/yourls
 CONF="/docker/yourls"
