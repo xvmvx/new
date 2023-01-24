@@ -46,5 +46,12 @@ if [[ ${change} = "1" ]]; then
     sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/memos.sh -O -)"
   elif [[ ${change1} = "2" ]]; then
     sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/joplin.sh -O -)"
+    
+  fi
+elif [[ ${change} = "3" ]]; then
+  green "ward,单台服务器监控面板的不错选择，输入“1”，开始安装"
+  read -p "所以请选择你的选择。。。" change3
+  if [[ ${change3} = "1" ]]; then
+    sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/ward.sh -O -)"
   fi
 fi
