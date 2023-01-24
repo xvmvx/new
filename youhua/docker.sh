@@ -40,4 +40,8 @@ green "一些想用的，比如：？？（7），？？（8）now。let‘s go�
 read -p "所以请选择你的选择。。。" change
 if [[ ${change} = "1" ]]; then
   green "Memos是个不错的选择，碎片化知识卡片管理工具，输入“1”，开始安装"
+  read -p "所以请选择你的选择。。。" change1
+  if [[ ${change1} = "1" ]]; then
+    sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/memos.sh -O -)"
+  fi
 fi
