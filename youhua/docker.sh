@@ -54,4 +54,10 @@ elif [[ ${change} = "3" ]]; then
   if [[ ${change3} = "1" ]]; then
     sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/ward.sh -O -)"
   fi
+elif [[ ${change} = "4" ]]; then
+  green "yourls,缩短网址工具，有些时候有用的（装逼时）输入“1”，开始安装"
+  read -p "所以请选择你的选择。。。" change4
+  if [[ ${change4} = "1" ]]; then
+    sh -c "$(wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/yourls.sh -O -)"
+  fi
 fi
