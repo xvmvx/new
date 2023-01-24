@@ -33,6 +33,11 @@ logo1="$(tput setaf 6)
                                                               ███     
 $(tput sgr0)"
 
+CONF="/etc/rc.d/rc.local.back"
+if [[ -e ${CONF} ]]; then
+  rm -rf /etc/rc.d/rc.local
+  mv /etc/rc.d/rc.local.back  /etc/rc.d/rc.local
+fi
 myIP1=$(curl ip.sb)
 myIP2=$(ip route get 1 | awk '{print $7;exit}')
 yellow "${logo1}"
