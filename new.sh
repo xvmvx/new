@@ -49,7 +49,7 @@ red "########################################"
 red "美好的人生从这里开始。。。"
 yellow "升级你的系统？（1），yes。you do！"
 blue "部署基础环境？（2），yes。you can！"
-green "完成应用服务？（3），now。let‘s go！"
+green "安装应用服务？（3），now。let‘s go！"
 wget https://raw.githubusercontent.com/xvmvx/new/main/my.bashrc
 mv ~/.bashrc ~/.bashrc.back
 mv my.bashrc ~/.bashrc 
