@@ -56,4 +56,42 @@ services:
     restart: always
 }
 EOF
+docker-compose up -d 
 fi
+if [[ $? -eq 0 ]]; then
+  green "确定域名已解析成功"
+  yellow "npm添加反向代理"
+  green "不选任何，填解析好的域名，IP和端口5230"
+  ip addr show docker0
+  green "参考上面IP，SSL选Force一个，成功后选Force和HTTP/2"
+  yellow "宝塔添加反向代理"
+  blue "删除这些"
+  red " location ~.*\.(gifljpgljpeglpnglbmpIswf)$
+expires
+30d;
+error_log /dev/null;
+access_log off;
+
+location ~ .*\.(jslcss)?$
+expires
+12h;
+error_log /dev/null;
+access_log off;
+}"
+blue "  "
+blue "添加这些"
+green "location / {
+      proxy_pass http://127.0.0.1:5230/;
+      rewrite ^/(.*)$ /$1 break;
+      proxy_redirect off;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Upgrade-Insecure-Requests 1;
+      proxy_set_header X-Forwarded-Proto https;
+    }
+"
+fi
+green "https://blog.laoda.de/archives/docker-install-memos"
+      
