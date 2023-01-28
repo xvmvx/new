@@ -44,6 +44,7 @@ blue "6）  潇洒现场"
 blue "7）加密货币小部件"
 blue "8）系统资源监控"
 blue "9）首页"
+blue "0）   "
 read -p "所以请选择你的选择，。。。" reME
 if [[ ${reME} = "1" ]]; then
 docker run -d \
@@ -105,6 +106,13 @@ elif [[ ${reME} = "9" ]]; then
 docker run -d \
   -p 8089:80 \
   -v /docker/conf9.yml:/app/public/conf.yml \
+  --name my-dashboard \
+  --restart=always \
+  lissy93/dashy:latest
+  elif [[ ${reME} = "0" ]]; then
+docker run -d \
+  -p 8080:80 \
+  -v /docker/conf0.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
