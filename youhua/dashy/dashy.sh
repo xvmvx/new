@@ -47,72 +47,82 @@ blue "9）首页"
 blue "0）   "
 read -p "所以请选择你的选择，。。。" reME
 if [[ ${reME} = "1" ]]; then
-docker run -d \
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf1.yml
+docker run -d \ 
   -p 8081:80 \
-  -v /docker/conf1.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf1.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "2" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf2.yml
 docker run -d \
   -p 8082:80 \
-  -v /docker/conf2.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf2.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "3" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf3.yml
 docker run -d \
   -p 8083:80 \
-  -v /docker/conf3.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf3.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "4" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf4.yml
 docker run -d \
   -p 8084:80 \
-  -v /docker/conf4.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf4.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "5" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf5.yml
 docker run -d \
   -p 8085:80 \
-  -v /docker/conf5.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf5.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "6" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf6.yml
 docker run -d \
   -p 8086:80 \
-  -v /docker/conf6.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf6.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "7" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf7.yml
 docker run -d \
   -p 8087:80 \
-  -v /docker/conf7.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf7.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "8" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf8.yml
 docker run -d \
   -p 8088:80 \
-  -v /docker/conf8.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf8.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "9" ]]; then
+wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf9.yml
 docker run -d \
   -p 8089:80 \
-  -v /docker/conf9.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf9.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
   elif [[ ${reME} = "0" ]]; then
+  wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf0.yml
 docker run -d \
   -p 8080:80 \
-  -v /docker/conf0.yml:/app/public/conf.yml \
+  -v /docker/dashy/conf0.yml:/app/public/conf.yml \
   --name my-dashboard \
   --restart=always \
   lissy93/dashy:latest
