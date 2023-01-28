@@ -26,10 +26,11 @@ yellow "注意信息"
 mkdir -p /docker/memos
 CONF="/docker/memos"
 if [[ -e ${CONF} ]]; then
-	green "默认安装位置：/docker/memos"
+  green "默认安装位置：/docker/memos"
+  cd /
   cd /docker/memos
 else
-	read -p "安装位置 $CONF 不正确，请手动录入新的地址: " CONF
+  read -p "安装位置 $CONF 不正确，请手动录入新的地址: " CONF
 fi
 
 # 判断端口是否占用
