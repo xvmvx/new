@@ -43,12 +43,12 @@ sudo source ~/.bashrc
 blue "SWAP虚拟内存，是否需要添加？y(yes)=you can！n(no)=you run！"
 read -p "所以请选择你的选择。。。" change
 if [[ ${change} = "y" ]]; then
-    wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/youhua/swap.sh && chmod +x swap.sh  && bash swap.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/youhua/swap.sh && chmod +x swap.sh  && bash swap.sh
 fi
 blue "SWAP虚拟内存已完成，此时重启你的机器是明知的？y(yes)=you can！n(no)=you run！"
 read -p "所以请选择你的选择。。。" change2
 if [[ ${change2} = "y" ]]; then
-    wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/new.sh  /root/new.sh && chmod +x new.sh 
+    wget -N --no-check-certificate https://raw.githubusercontent.com/xvmvx/new/main/new.sh  && chmod +x new.sh 
     cp /etc/rc.d/rc.local /etc/rc.d/rc.local.back
     echo "/root/new.sh" >> /etc/rc.d/rc.local
     reboot
