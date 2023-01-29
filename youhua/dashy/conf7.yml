@@ -2,10 +2,9 @@
 # This is an example of how to use widgets, to display live data
 # Dashboard is for moniroting crypto prices, news and other stats
 # Screenshot of the running project: https://ibb.co/album/ynSwzm
-
 pageInfo:
-  title: Crypto Dash
-  description:
+  title: 道
+  description: 神即道， 道法自然， 如来
   navLinks:
   - title: Portfolio
     path: https://www.livecoinwatch.com/portfolio
