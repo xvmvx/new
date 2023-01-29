@@ -1,14 +1,14 @@
 ---
-# Page meta info, like heading, footer text and nav links
-pageInfo:
+# 页面元信息，如标题、页脚文本和导航链接。
+PageInfo：
   title: 道
   description: 神即道， 道法自然， 如来
 
-# Optional app settings and configuration
+# 可选的应用程序设置和配置
 appConfig:
   theme: colorful
 
-# Main content - An array of sections, each containing an array of items
+#主要内容-一组部分，每个部分包含一个项目数组
 sections:
 - name: CPU Usage
   icon: fas fa-tachometer
