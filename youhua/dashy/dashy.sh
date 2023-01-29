@@ -35,18 +35,19 @@ $(tput sgr0)"
 clear
 yellow "${logo1}"
 red "#############   示例  ##################"
-blue "1)     入门"
+blue "1)      入门"
 blue "2）     书签"
-blue "3）家庭实验室"
-blue "4）  展示功能"
-blue "5）CFT 工具箱"
-blue "6）  潇洒现场"
-blue "7）加密货币小部件"
-blue "8）系统资源监控"
-blue "9）首页"
-blue "0）   "
+blue "3）     家庭实验室"
+blue "4）     展示功能"
+blue "5）     CFT 工具箱"
+blue "6）     潇洒现场"
+blue "7）     加密货币小部件"
+blue "8）     系统资源监控"
+blue "9）     首页"
+blue "0）     "
 read -p "所以请选择你的选择，。。。" reME
 if [[ ${reME} = "1" ]]; then
+blue "端口8081，请检查！安装成功后登录 http：//IP：8081     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf1.yml
 docker run -d \ 
   -p 8081:80 \
@@ -55,6 +56,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "2" ]]; then
+blue "端口8082，请检查！安装成功后登录 http：//IP：8082     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf2.yml
 docker run -d \
   -p 8082:80 \
@@ -63,6 +65,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "3" ]]; then
+blue "端口8083，请检查！安装成功后登录 http：//IP：8083     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf3.yml
 docker run -d \
   -p 8083:80 \
@@ -71,6 +74,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "4" ]]; then
+blue "端口8084，请检查！安装成功后登录 http：//IP：8084     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf4.yml
 docker run -d \
   -p 8084:80 \
@@ -79,6 +83,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "5" ]]; then
+blue "端口8085，请检查！安装成功后登录 http：//IP：8085     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf5.yml
 docker run -d \
   -p 8085:80 \
@@ -87,6 +92,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "6" ]]; then
+blue "端口8086，请检查！安装成功后登录 http：//IP：8086     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf6.yml
 docker run -d \
   -p 8086:80 \
@@ -95,6 +101,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "7" ]]; then
+blue "端口8087，请检查！安装成功后登录 http：//IP：8087     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf7.yml
 docker run -d \
   -p 8087:80 \
@@ -103,6 +110,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "8" ]]; then
+blue "端口8088，请检查！安装成功后登录 http：//IP：8088     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf8.yml
 docker run -d \
   -p 8088:80 \
@@ -111,6 +119,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
 elif [[ ${reME} = "9" ]]; then
+blue "端口8089，请检查！安装成功后登录 http：//IP：8089     "
 wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf9.yml
 docker run -d \
   -p 8089:80 \
@@ -119,6 +128,7 @@ docker run -d \
   --restart=always \
   lissy93/dashy:latest
   elif [[ ${reME} = "0" ]]; then
+  blue "端口8080，请检查！安装成功后登录 http：//IP：8080     "
   wget https://raw.githubusercontent.com/xvmvx/new/main/youhua/dashy/conf0.yml
 docker run -d \
   -p 8080:80 \
